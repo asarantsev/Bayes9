@@ -20,18 +20,6 @@ def verification(data):
     print('ACF p-value for Ljung-Box test = ', stats.acorr_ljungbox(data, lags = [5, 10])['lb_pvalue'].values)
     print('Same for absolute values = ', stats.acorr_ljungbox(abs(data), lags = [5, 10])['lb_pvalue'].values)
 
-# Inverse Yeo-johnson transform with lambda = -0.5
-def YJinv(y):
-    y = np.asarray(y, dtype = float)
-    x = np.empty_like(y)
-    pos = y >= 0
-    neg = ~pos
-    # y >= 0: y = ((x + 1)^lambda - 1) / lambda
-    x[pos] = np.power(1 + (-0.5) * y[pos], -2) - 1
-    # y < 0: y = -[((1 - x)^(2-lambda) - 1) / (2-lambda)]
-    x[neg] = 1 - np.power(1 - (2.5) * y[neg], 0.4)
-    return x
-
 # reading the data file
 DF = pd.read_excel('9model.xlsx', sheet_name = 'data')
 vol = DF['Volatility'].values[1:]
