@@ -21,7 +21,7 @@ def verification(data):
     print('Same for absolute values = ', stats.acorr_ljungbox(abs(data), lags = [5, 10])['lb_pvalue'].values)
 
 # reading the data file
-DF = pd.read_excel('9model.xlsx', sheet_name = 'data')
+DF = pd.read_excel('old-data.xlsx', sheet_name = 'data')
 vol = DF['Volatility'].values[1:]
 price = DF['Price'].values
 div = DF['Dividends'].values
