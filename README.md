@@ -11,5 +11,5 @@ Next we must add the plot simulation, and the overall file which we start in pla
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-UPDATE: We renamed the previous versions old-fit.py and old-data.xlsx. We removed a Python file with Bayesian simulation. But we added more files.
+UPDATE: We renamed the previous versions old-fit.py and old-data.xlsx. We removed a Python file with Bayesian simulation. But we added more files: fit-model.py and full-data.xlsx. Here we model Treasury returns deterministically. And include Ibbotson SBBI corporate returns data, 1926-1975.
 
