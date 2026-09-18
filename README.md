@@ -15,7 +15,7 @@ UPDATE: We renamed the previous versions old-fit.py and old-data.xlsx. We put th
 
 We removed a Python file with Bayesian simulation. But we added more files: fit-model.py and full-data.xlsx. Here we model Treasury returns deterministically. And include Ibbotson SBBI corporate returns data, 1926-1975.
 
-Finally, we included the file with classic (NOT Bayesian simulation) of the 5 asset classes, adapted from the repository Gaussian-Innovations/full-model
+Finally, we included the file with classic (NOT Bayesian simulation) of the 5 asset classes, adapted from the repository https://github.com/asarantsev/Gaussian-Innovations/tree/main/full-model
 
-https://github.com/asarantsev/Gaussian-Innovations/tree/main/full-model
+The next and final step would be to include Bayesian version. It occurred to us we might simply use Wishart matrix-valued distribution with 100 degrees of freedom (corresponding to the maximal number of regression data points).
 
