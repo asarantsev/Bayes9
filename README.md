@@ -8,3 +8,8 @@ Yeo-Johnson transform of log volatility with index -0.5; Randomness for 7-year z
 We still have to make further updates. We have a data file with all 5 assets. Python file with fitted regressions (no plots, they will be added later) and another Python file with Bayesian simulation of regression coefficients but not covariance matrix of innovations (coefficients need to be updated, together with zero-coupon bond returns). 
 
 Next we must add the plot simulation, and the overall file which we start in place of a web app, and the classic simulation file. Also, add different models: simplified ones. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+UPDATE: We renamed the previous versions old-fit.py and old-data.xlsx. We removed a Python file with Bayesian simulation. But we added more files.
+
