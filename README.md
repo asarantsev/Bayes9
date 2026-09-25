@@ -1,9 +1,35 @@
 # Bayes9
-Fully updated Bayesian simulator with 9 regressions, 9 innovation series.
+Fully updated Bayesian simulator with 8 innovation series. 5 asset classes of US stocks, developed stocks, emerging stocks, Treasury bonds, and corporate bonds. All returns are total, nominal. Valuation measure, log spread of logs, BAA log rates, volatility. 4 factors: Measure (last day of year), volatility (annual), BAA rate, 10-year Treasury rate (average daily December). This is NOT a stationary model. All innovations are IID Gaussian, tested by Shapiro-Wilk and Jarque-Bera normality tests, and by the Ljung-Box test for 5 and 10 lags for original and absolute values of innovations. Features:
+
+Volatility and S&P returns data thanks to Angel Piotrowski and Ian Anderson
+
+Rate data for BAA and 10-year Treasury extended back to 1925 from 1927
+
+Corporate bond returns data extended back to 1926 from 1973
+
+Yeo-Johnson transform of log volatility with index -0.5 modeled as autoregression with lag 1
+
+Log risk spread of logs as autoregression with lag 1
+
+Valuation measure modeled as autoregression with lag 1 with stochastic volatility
+
+Log BAA rate as random walk with stochastic volatility
+
+Treasury 10-year returns (coupon bonds) deterministic formula thanks to Aswath Damodaran
+
+Corporate bond returns minus rates (log duration) as a function of rate change
+
+Domestic, developed, emerging stocks vs rate change and valuation measure with stochastic volatility
+
+TBD: Bayesian version with objective Bayes inference for regression coefficients
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Previous: 
 
 Returns of 5 asset classes of US stocks, developed stocks, emerging stocks, Treasury bonds, and corporate bonds. (All returns are geometric, total, nominal.) Valuation measure, log spread of logs, BAA log rates, Yeo-Johnson transformed log volatility. 4 factors: Measure (last day of year), volatility (annual), BAA rate, 10-year Treasury rate (average daily December).
 
-Yeo-Johnson transform of log volatility with index -0.5; Randomness for 7-year zero-coupon Treasury returns; Objective Bayes inference for regression coefficients but not for standard errors or correlation matrix; Normalization of each of three Valuation and duration.
+; Randomness for 7-year zero-coupon Treasury returns; Objective Bayes inference for regression coefficients but not for standard errors or correlation matrix; Normalization of each of three Valuation and duration.
 
 We still have to make further updates. We have a data file with all 5 assets. Python file with fitted regressions (no plots, they will be added later) and another Python file with Bayesian simulation of regression coefficients but not covariance matrix of innovations (coefficients need to be updated, together with zero-coupon bond returns). 
 
