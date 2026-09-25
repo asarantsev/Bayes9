@@ -4,13 +4,13 @@
 # developed ex-USA stocks, measured by MSCI EAFE 88% + MSCI Canada 12%
 # emerging markets stocks, measured by MSCI EM
 # USA long-term Treasuries, measured by 10-year zero-coupon Treasury bonds
-# USA investment-grade corporate bonds, measured by Bank of America ICE Investment Grade Index
+# USA investment-grade corporate bonds, measured by MSCI index
 
 import numpy as np
 from matplotlib import pyplot as plt
 from matplotlib.ticker import FuncFormatter
 
-NSIMS = 400
+NSIMS = 10000
 
 # number of displayed simulations on the graph
 NDISPLAYS = 5
@@ -33,6 +33,8 @@ selectedPercentages = [0.1, 0.3, 0.5, 0.7, 0.9]
 # initialW = initialWealth invested in this portfolio, please make it between 1 and 1000
 # initialFlow (signed value) = first year flow: contribution (+) or withdrawal (-)
 # growthFlow (signed value) = annual growth (+) or decline (-) of flow
+
+# it saves PNG and PDF with graphs of portfolios and summary statistics
 
 def simWealth(simReturns, initialW, initialFlow, growthFlow, nYears, bondStart, bondEnd, intlShare, emShare, trShare):
     
@@ -181,7 +183,7 @@ def setupText(initialWealth, initialFlow, growthFlow, timeHorizon, bondShare0, b
     stockText = 'Stocks: ' + percent(1 - intlShare) + ' American: S&P 500 and ' + percent(intlShare) + ' International'
     devText = 'Intl Stocks: ' + percent(1 - emShare) + ' ex-US Developed and ' + percent(emShare) + ' Emerging MSCI'
     bondText = 'Bonds: ' + percent(1 - trShare) + ' BofA Investment-Grade and ' + percent(trShare) + ' 10-year Treasuries'
-    initText = 'Portfolio: Stocks and USA corporate bonds'
+    initText = 'Portfolio: stocks and bonds'
     startText = 'At the start: ' + percent(1 - bondShare0) + ' Stocks ' + percent(bondShare0) + ' Bonds'
     endText = 'At the end: ' + percent(1 - bondShare1) + ' Stocks ' + percent(bondShare1) + ' Bonds'
 
