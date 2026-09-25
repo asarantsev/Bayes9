@@ -21,7 +21,7 @@ Corporate bond returns minus rates (log duration) as a function of rate change
 
 Domestic, developed, emerging stocks vs rate change and valuation measure with stochastic volatility
 
-TBD: Bayesian version with objective Bayes inference for regression coefficients
+TBD: Bayesian version with objective Bayes inference for regression coefficients; and maybe we can add: For international stocks, its own dividend-based valuation measure rather than rely on US-based; for Treasury bonds, use actual returns data from SBBI or FRED to compare with predicted returns from Damodaran's formula
 
 https://my-finance.org/2026/09/25/current-simulation-version/
 
