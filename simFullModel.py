@@ -31,7 +31,7 @@
 # B(t) = 0.01 * R(t-1) + exp(-0.015208 - 0.036084 * (R(t) - R(t-1)) + Z_B(t)) - 1
 
 # Treasury long-term (10-year) bonds
-# A(t) = 1 + (1 + L(t)* 0.01)**(-9)/(1 + L(t-1)*0.01)**(-10)
+# A(t) = (L(t-1)/L(t))*(1 - (1 + L(t))**(-10)) + (1 + L(t))**(-10) - 1 + L(t-1)
 
 # Next, the four factors are:
 # with dC(t) = C(t) - C(t-1)
@@ -67,6 +67,10 @@ def YJinv(y):
     # y < 0: y = -[((1 - x)^(2-lambda) - 1) / (2-lambda)]
     x[neg] = 1 - numpy.power(1 - (2.5) * y[neg], 0.4)
     return x
+
+# returns of coupon Treasury bonds
+def ZeroRet(last, next):
+    return (last/next)*(1 - (1 + next)**(-10)) + (1 + next)**(-10) - 1 + last
 
 # This is the main simulation function
 # T = time horizon
@@ -141,6 +145,5 @@ def sim(initialV, initialH, initialR, initialL, T):
         
         # two series of bond returns
         simRetBonds[t] = 0.01 * simRates[t] + numpy.exp(-0.015208 * numpy.ones(NSIMS) - 0.036084 * (simRates[t+1] - simRates[t]) + noiseBonds[t]) - numpy.ones(NSIMS)
-        simRetLong[t] = ((numpy.ones(NSIMS) + 0.01 * simLong[t])**10)*((numpy.ones(NSIMS) + 0.01 * simLong[t+1])**(-9)) - numpy.ones(NSIMS)
-    
+        simRetLong[t] = zeroRet(0.01 * simLong[t], 0.01 * simLog[t+1])    
     return [simRetUSA, simRetIntl, simRetEm, simRetLong, simRetBonds]
