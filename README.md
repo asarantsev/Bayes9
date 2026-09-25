@@ -5,7 +5,7 @@ Volatility and S&P returns data thanks to Angel Piotrowski and Ian Anderson
 
 Rate data for BAA and 10-year Treasury extended back to 1925 from 1927
 
-Corporate bond returns data extended back to 1926 from 1973
+Corporate bond returns data extended back to 1926 from 1973 from SBBI thanks to Smaila Amoanu
 
 Yeo-Johnson transform of log volatility with index -0.5 modeled as autoregression with lag 1
 
@@ -22,6 +22,8 @@ Corporate bond returns minus rates (log duration) as a function of rate change
 Domestic, developed, emerging stocks vs rate change and valuation measure with stochastic volatility
 
 TBD: Bayesian version with objective Bayes inference for regression coefficients
+
+https://my-finance.org/2026/09/25/current-simulation-version/
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
