@@ -1,4 +1,7 @@
 # Bayes9
+
+UPDATE: Same simulator in the folder RW, but with Shiller CAPE yield instead of the new valuation measure. This is de facto continuation of the work from Gaussian-Innovations repo. But only fit of the 8-series model, not really a simulation yet. 
+
 Fully updated Bayesian simulator with 8 innovation series. 5 asset classes of US stocks, developed stocks, emerging stocks, Treasury bonds, and corporate bonds. All returns are total, nominal. Valuation measure, log spread of logs, BAA log rates, volatility. 4 factors: Measure (last day of year), volatility (annual), BAA rate, 10-year Treasury rate (average daily December). This is NOT a stationary model. All innovations are IID Gaussian, tested by Shapiro-Wilk and Jarque-Bera normality tests, and by the Ljung-Box test for 5 and 10 lags for original and absolute values of innovations. Features:
 
 Volatility and S&P returns data thanks to Angel Piotrowski and Ian Anderson
